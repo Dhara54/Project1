@@ -109,6 +109,11 @@ class homepage extends page
         
 
     }
+    
+    public function post() {
+        uploadsfile::uploadFile();
+            }
+
     }
 class displayTable extends page {
 
