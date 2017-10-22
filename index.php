@@ -110,6 +110,25 @@ class homepage extends page
 
     }
     }
+class displayTable extends page {
+
+public function get(){
+//extracting file name from url
+$csvFile=$_REQUEST["filename"];
+
+echo '<html><body><table border="3">';
+$f = fopen("uploads/".$csvFile, "r");
+while (($line = fgetcsv($f)) !== false) {
+        echo '<tr>';
+        foreach ($line as $cell) {
+                echo '<td>' . htmlspecialchars($cell) . '</td>';
+        }
+        echo '</tr>';
+}
+fclose($f);
+echo '</table></body></html>';
+  }
+}
 
 
 ?>
