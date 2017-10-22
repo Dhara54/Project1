@@ -17,6 +17,27 @@ error_reporting(E_ALL);
 //instantiate the program object
 
 
+Class uploadsfile{
+ static public function uploadFile(){                                                   
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["tmp_name"]);
+$fileName=$_FILES["fileToUpload"]["name"];
+$FileType = pathinfo($fileName,PATHINFO_EXTENSION);
+//checking file type
+if(isset($_POST["submit"])) {
+   if($FileType=="csv"){                                                                                                              
+       move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], 'uploads/' . $_FILES["fileToUpload"]["name"]);
+       header("Location: http://web.njit.edu/~dbp54/Project1/index.php?page=displayTable&filename=".$_FILES["fileToUpload"]["name"]);
+     }
+     
+   else{
+     $text= 'Upload csv File';
+     echo $text;                                                          
+        }
+   
+    }
+  }
+}
 
 
 $obj = new main();
