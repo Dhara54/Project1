@@ -88,6 +88,7 @@ class homepage extends page
         
 
     }
+    }
 
 
 ?>
