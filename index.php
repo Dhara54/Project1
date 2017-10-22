@@ -12,7 +12,7 @@ error_reporting(E_ALL);
    // }
 //}
 
-spl_autoload_register(array('Manage', 'autoload'));
+//spl_autoload_register(array('Manage', 'autoload'));
 
 //instantiate the program object
 
