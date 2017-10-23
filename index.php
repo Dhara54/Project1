@@ -6,13 +6,13 @@ error_reporting(E_ALL);
 
 
 //To load display.php to display contents
-//class Manage {
-  //  public static function autoload($class) {
-    //    include 'index.php';
-   // }
-//}
+class Manage {
+    public static function autoload($class) {
+        include 'index.php';
+    }
+}
 
-//spl_autoload_register(array('Manage', 'autoload'));
+spl_autoload_register(array('Manage', 'autoload'));
 
 //instantiate the program object
 
