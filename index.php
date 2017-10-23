@@ -18,12 +18,14 @@ spl_autoload_register(array('Manage', 'autoload'));
 
 
 Class uploadsfile{
- static public function uploadFile(){                                                   
+ static public function uploadFile(){   
+                                                 
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["tmp_name"]);
 $fileName=$_FILES["fileToUpload"]["name"];
 $FileType = pathinfo($fileName,PATHINFO_EXTENSION);
 //checking file type
+
 if(isset($_POST["submit"])) {
    if($FileType=="csv"){                                                                                                              
        move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], 'uploads/' . $_FILES["fileToUpload"]["name"]);
@@ -49,6 +51,7 @@ class main {
     {
         //set default page request to homepage
         $pageRequest = 'homepage';
+       
         //check if there are parameters
         if(isset($_REQUEST['page'])) {
             //load the type of page the request wants into page request
@@ -70,6 +73,7 @@ class main {
 
 abstract class page {
     protected $html='';
+    
     public function __construct()
     {
         //Starting html form
@@ -77,6 +81,7 @@ abstract class page {
         $this->html .= '<body>';
 
     }
+    
     public function __destruct()
     {
         $this->html = '</body></html>';
