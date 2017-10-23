@@ -105,7 +105,7 @@ class homepage extends page
         $form .= '<input type="file" name="fileToUpload" id="fileToUpload"><br><br>';
         $form .= '<input type="submit" value="Upload CSV file" name="submit"></center>';
         $form .= '</form> ';
-        echo $form;                                                        
+                                                                
         
 
     }
